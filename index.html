@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#6b7cff">
+  <meta name="description" content="Doge Dragon Quest - a cute 2.5D offline action adventure PWA.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <title>Doge Dragon Quest</title>
+</head>
+<body>
+  <div id="app">
+    <canvas id="game" aria-label="Doge Dragon Quest game"></canvas>
+
+    <section id="loading" class="screen active">
+      <div class="loader-card">
+        <div class="logo-mark">🐶🐉</div>
+        <h1>Doge Dragon Quest</h1>
+        <p id="loadText">Much Wow Loading…</p>
+        <div class="progress"><span id="progress"></span></div>
+        <small>Preparing your adventure</small>
+      </div>
+    </section>
+
+    <section id="menu" class="screen">
+      <div class="menu-card glass">
+        <div class="brand"><span>🐶</span><div><h1>Doge Dragon Quest</h1><p>Much adventure. Very dragon.</p></div></div>
+        <div class="menu-buttons">
+          <button data-action="play">PLAY</button>
+          <button data-action="characters">CHARACTERS</button>
+          <button data-action="levels">LEVELS</button>
+          <button data-action="themes">THEMES</button>
+          <button data-action="settings">SETTINGS</button>
+        </div>
+        <div class="credit">Developer by Muhammed Usman</div>
+      </div>
+    </section>
+
+    <section id="panel" class="screen">
+      <div class="panel-card glass">
+        <button class="close" data-action="menu">×</button>
+        <div id="panelContent"></div>
+      </div>
+    </section>
+
+    <section id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="stat glass"><span>❤️</span><div class="bar"><i id="hp"></i></div></div>
+        <div class="score glass">🪙 <b id="coins">0</b> &nbsp; ⭐ <b id="score">0</b></div>
+        <button class="pause glass" data-action="pause">Ⅱ</button>
+      </div>
+      <div id="toast"></div>
+      <div class="touch">
+        <div class="touch-left"><button id="left">◀</button><button id="right">▶</button></div>
+        <div class="touch-right"><button id="jump">↑</button><button id="attack">✦</button><button id="fire">🔥</button></div>
+      </div>
+    </section>
+
+    <section id="pause" class="screen hidden">
+      <div class="panel-card glass">
+        <h2>Game Paused</h2>
+        <button data-action="resume">RESUME</button>
+        <button data-action="restart">RESTART LEVEL</button>
+        <button data-action="levels">LEVEL SELECT</button>
+        <button data-action="settings">SETTINGS</button>
+        <button data-action="menu">MAIN MENU</button>
+        <div class="credit">Developer by Muhammed Usman</div>
+      </div>
+    </section>
+
+    <section id="result" class="screen hidden">
+      <div class="panel-card glass">
+        <div id="resultIcon" class="result-icon">🏆</div>
+        <h2 id="resultTitle">WOW! LEVEL COMPLETE!</h2>
+        <p id="resultStats"></p>
+        <button data-action="next">NEXT LEVEL</button>
+        <button data-action="restart">REPLAY</button>
+        <button data-action="levels">LEVEL SELECT</button>
+        <button data-action="menu">MAIN MENU</button>
+        <div class="credit">Developer by Muhammed Usman</div>
+      </div>
+    </section>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

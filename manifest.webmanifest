@@ -1,0 +1,14 @@
+{
+  "name":"Doge Dragon Quest",
+  "short_name":"Doge Quest",
+  "description":"A cute 2.5D Doge adventure game.",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"landscape",
+  "background_color":"#10172d",
+  "theme_color":"#6b7cff",
+  "icons":[
+    {"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
